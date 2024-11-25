@@ -140,7 +140,7 @@ kubectl port-forward svc/my-otel-demo-frontendproxy 8080:8080 --address 0.0.0.0
 
 #### Now access the application by pasting the following URL in the browser:
 
-<Public IP of my EC2 instance>:8080
+Public_IP_of_your_EC2_Instance:8080
 
 Perform some activities such as adding some products to the cart, checkout for payment, etc. Even though we do not perform these activities we will get some metrics and traces since this application has a fake load generator. But if we want to see our own request metrics and own request traces then perform some activities such as add some items to cart, change currency, click on other multiple micro services, etc at least.
 
@@ -156,7 +156,7 @@ If you are doing project on local machine (laptop):
 http://localhost:8080/jaeger/ui/
 
 If you are doing project on EC2 instance:
-http://<Public IP of EC2 instance>:8080/jaeger/ui/
+http://Public_IP_of_your_EC2_Instance:8080/jaeger/ui/
 
 Now select the various services such as ‘checkoutservice’, 'cartservice' etc and try to see the traces of the last 5 minutes, 10 minutes, 30 minutes, 60 minutes, etc.
 
@@ -164,7 +164,7 @@ Now select the various services such as ‘checkoutservice’, 'cartservice' etc
 
 If you are doing project on EC2 instance:
 
-http://<Public IP of EC2 instance>:8080/grafana/
+http://Public_IP_of_your_EC2_Instance:8080/grafana/
 
 No password is required. Authentication is disabled.
 
@@ -232,9 +232,9 @@ kubectl port-forward -n kube-system svc/kube-state-metrics 8080:8080
 
 Access metrics at: http://localhost:8080/metrics
 OR
-Access metrics at: http://<Public IP of EC2 instance>:8080/metrics
+Access metrics at: http://Public_IP_of_your_EC2_Instance:8080/metrics
 OR
-Access metrics at: http://<Public IP of EC2 instance>:8080
+Access metrics at: http://Public_IP_of_your_EC2_Instance:8080
 
 #### Add an inbound rule 9100 to the security group of your EC2 instance:
 
@@ -244,7 +244,7 @@ kubectl port-forward -n kube-system svc/node-exporter-prometheus-node-exporter 9
 
 Access metrics at: http://localhost:9100/metrics
 OR
-Access metrics at: http://<Public IP of EC2 instance>:9100/metrics
+Access metrics at: http://Public_IP_of_your_EC2_Instance:9100/metrics
 OR
-Access metrics at: http://<Public IP of EC2 instance>:9100
+Access metrics at: http://Public_IP_of_your_EC2_Instance:9100
 
